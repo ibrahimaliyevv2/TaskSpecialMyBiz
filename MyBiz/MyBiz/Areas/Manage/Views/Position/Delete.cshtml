@@ -1,0 +1,18 @@
+﻿@model Position
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black !important"> @Model.Name</h5>
+
+                    <form asp-action="delete">
+                        <a asp-action="index" class="btn btn-secondary">Go back</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
