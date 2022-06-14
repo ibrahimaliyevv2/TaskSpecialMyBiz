@@ -21,6 +21,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="DAL\" />
     <None Remove="Areas\Manage\Views\Position\" />
+    <None Remove="Areas\Manage\Views\Teammember\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -37,9 +38,14 @@
     <Folder Include="Areas\Manage\Views\Shared\" />
     <Folder Include="DAL\" />
     <Folder Include="Areas\Manage\Views\Position\" />
+    <Folder Include="Areas\Manage\Views\Teammember\" />
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="wwwroot\uploads\teammembers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\uploads\" />
+    <Content Remove="wwwroot\uploads\teammembers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />

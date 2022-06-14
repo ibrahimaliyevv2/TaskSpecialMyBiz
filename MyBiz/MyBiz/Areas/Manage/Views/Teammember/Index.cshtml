@@ -1,0 +1,57 @@
+﻿@model List<Teammember>
+@{
+    int count = 0;
+}
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 mx-auto">
+            <a asp-action="create" class="btn btn-primary mt-2">Create New</a>
+        </div>s
+        <div class="col-md-10 mx-auto">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">No:</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Twitter Username</th>
+                        <th scope="col">Facebook Username</th>
+                        <th scope="col">Instagram Username</th>
+                        <th scope="col">LinkedIn Username</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Teammember tm in Model)
+                    {
+                        count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@tm.FullName</td>
+                        <td>@tm.Position</td>
+                        <td>@tm.Description</td>
+                        <td>@tm.TwitterUsername</td>
+                        <td>@tm.FacebookUsername</td>
+                        <td>@tm.InstagramUsername</td>
+                        <td>@tm.LinkedInUsername</td>
+                        <td>
+                            <img width="100" src="~/uploads/teammembers/@tm.ImageUrl"/>
+                        </td>
+                        <td>
+                            <a asp-action="edit" asp-route-id="@tm.Id" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a asp-action="delete" asp-route-id="@tm.Id" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -80,3 +80,5 @@
 /Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/obj/Debug/netcoreapp3.1/Razor/Areas/Manage/Views/Position/Create.cshtml.g.cs
 /Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/obj/Debug/netcoreapp3.1/Razor/Areas/Manage/Views/Position/Delete.cshtml.g.cs
 /Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/obj/Debug/netcoreapp3.1/Razor/Areas/Manage/Views/Position/Edit.cshtml.g.cs
+/Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/obj/Debug/netcoreapp3.1/Razor/Areas/Manage/Views/Teammember/Index.cshtml.g.cs
+/Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/obj/Debug/netcoreapp3.1/Razor/Areas/Manage/Views/Teammember/Create.cshtml.g.cs

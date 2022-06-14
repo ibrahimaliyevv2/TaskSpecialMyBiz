@@ -12,6 +12,7 @@ namespace MyBiz.DAL
 		}
 
 		public DbSet<Position> Positions{get;set;}
+		public DbSet<Teammember> Teammembers { get; set; }
 	}
 }
 

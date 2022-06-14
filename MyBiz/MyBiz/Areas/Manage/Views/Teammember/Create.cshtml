@@ -1,0 +1,44 @@
+﻿@model Teammember
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form asp-action="create" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="PositionId" class="form-label">PositionId</label>
+                    <input asp-for="PositionId" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="PositionId"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">Full Name</label>
+                    <input asp-for="FullName" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <input asp-for="Description" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="TwitterUsername" class="form-label">Twitter Username</label>
+                    <input asp-for="TwitterUsername" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="TwitterUsername"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="InstagramUsername" class="form-label">Instagram Username</label>
+                    <input asp-for="InstagramUsername" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="InstagramUsername"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="LinkedInUsername" class="form-label">LinkedIn Username</label>
+                    <input asp-for="LinkedInUsername" style="color:white" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="LinkedInUsername"></span>
+                </div>
+                <div class="mb-3">
+                    <input asp-for="ImageFile"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

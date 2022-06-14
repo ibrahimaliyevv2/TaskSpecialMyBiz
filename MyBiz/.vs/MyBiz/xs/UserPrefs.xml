@@ -6,12 +6,10 @@
   <MonoDevelop.Ide.ItemProperties.MyBiz PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyBiz/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyBiz/Areas/Manage/Controllers/TeammemberController.cs">
     <Files>
-      <File FileName="MyBiz/Areas/Manage/Controllers/PositionController.cs" Line="51" Column="1" />
-      <File FileName="MyBiz/Areas/Manage/Views/Position/Index.cshtml" Line="32" Column="55" />
-      <File FileName="MyBiz/Areas/Manage/Views/Position/Delete.cshtml" Line="13" Column="28" />
-      <File FileName="MyBiz/Startup.cs" Line="34" Column="34" />
+      <File FileName="MyBiz/Areas/Manage/Views/Teammember/Create.cshtml" Line="43" Column="46" />
+      <File FileName="MyBiz/Areas/Manage/Controllers/TeammemberController.cs" Line="51" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,22 +18,17 @@
             <Node name="MyBiz" expanded="True">
               <Node name="Areas" expanded="True">
                 <Node name="Manage" expanded="True">
-                  <Node name="Controllers" expanded="True" />
+                  <Node name="Controllers" expanded="True">
+                    <Node name="TeammemberController.cs" selected="True" />
+                  </Node>
                   <Node name="Views" expanded="True">
                     <Node name="Position" expanded="True" />
-                    <Node name="Shared" expanded="True" />
+                    <Node name="Teammember" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
-              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
               <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>

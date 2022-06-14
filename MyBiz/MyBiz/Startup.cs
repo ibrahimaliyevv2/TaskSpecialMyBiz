@@ -37,7 +37,7 @@ namespace MyBiz
             {
                 endpoints.MapControllerRoute(
                     "areas",
-                    "{area:exists}/{controller=Dasboard}/{action=Index}/{id?}"
+                    "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
                     );
 
                 endpoints.MapControllerRoute(
