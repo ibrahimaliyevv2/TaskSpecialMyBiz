@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyBiz.DAL;
+using MyBiz.Helpers;
 using MyBiz.Models;
 
 namespace MyBiz.Areas.Manage.Controllers
@@ -12,10 +14,12 @@ namespace MyBiz.Areas.Manage.Controllers
 	public class TeammemberController:Controller
 	{
 		private readonly AppDbContext _context;
+		private readonly IWebHostEnvironment _env;
 
-        public TeammemberController(AppDbContext context)
+        public TeammemberController(AppDbContext context, IWebHostEnvironment env)
         {
 			_context = context;
+			_env = env;
         }
 
 		public IActionResult Index()
@@ -61,19 +65,30 @@ namespace MyBiz.Areas.Manage.Controllers
 				return View();
 			}
 
-			string path = @"/Users/ibrahimaliyevv/Projects/TaskSpecialMyBiz/MyBiz/MyBiz/wwwroot/uploads/teammembers/" + teammember.ImageFile.FileName;
-
-			using(FileStream stream = new FileStream(path, FileMode.Create))
-            {
-				teammember.ImageFile.CopyTo(stream);
-			}
 			
-			teammember.ImageUrl = teammember.ImageFile.FileName;
+
+			teammember.ImageUrl = FileManager.Save(_env.WebRootPath, "uploads/teammembers", teammember.ImageFile);
 
 			_context.Teammembers.Add(teammember);
 			_context.SaveChanges();
 
 			return RedirectToAction("Index");
+        }
+
+		//Sweet-Delete
+		public IActionResult Delete(int id)
+        {
+			Teammember teammember = _context.Teammembers.FirstOrDefault(x=>x.Id==id);
+
+			if(teammember == null)
+            {
+				return NotFound();
+            }
+
+			_context.Teammembers.Remove();
+			_context.SaveChanges();
+
+			
         }
 	}
 }
