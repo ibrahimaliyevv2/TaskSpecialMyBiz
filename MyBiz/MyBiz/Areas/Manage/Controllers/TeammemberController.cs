@@ -30,6 +30,8 @@ namespace MyBiz.Areas.Manage.Controllers
 
 		//CRUD operations
 
+
+		//Create option
 		public IActionResult Create()
         {
 			
@@ -75,20 +77,93 @@ namespace MyBiz.Areas.Manage.Controllers
 			return RedirectToAction("Index");
         }
 
-		//Sweet-Delete
+
+		//Edit option
+		public IActionResult Edit(int id)
+        {
+			Teammember teammember = _context.Teammembers.FirstOrDefault(x => x.Id == id);
+
+			if(teammember == null)
+            {
+				return RedirectToAction("error", "dashboard");
+            }
+
+			return View(teammember);
+        }
+
+
+		[HttpPost]
+		public IActionResult Edit(Teammember teammember)
+        {
+			Teammember existTeammember = _context.Teammembers.FirstOrDefault(x=>x.Id == teammember.Id);
+
+			if(existTeammember == null)
+            {
+				return RedirectToAction("error", "dashboard");
+            }
+
+			if(teammember.ImageFile != null)
+            {
+				if (teammember.ImageFile.ContentType != "image/png" && teammember.ImageFile.ContentType != "image/jpeg")
+				{
+					ModelState.AddModelError("ImageFile", "File format should be image/png or image/jpeg.");
+					return View();
+				}
+
+				if (teammember.ImageFile.Length > 2097152)
+				{
+					ModelState.AddModelError("ImageFile", "File should be less than 2 MB.");
+					return View();
+				}
+
+                if (!ModelState.IsValid)
+                {
+					return View();
+                }
+
+				string newFileName = FileManager.Save(_env.WebRootPath, "uploads/teammembers", teammember.ImageFile);
+
+				FileManager.Delete(_env.WebRootPath, "uploads/teammembers", existTeammember.ImageUrl);
+
+				existTeammember.ImageUrl = newFileName;
+			}
+
+
+			existTeammember.FullName = teammember.FullName;
+			existTeammember.Description = teammember.FullName;
+			existTeammember.TwitterUsername = teammember.TwitterUsername;
+			existTeammember.FacebookUsername = teammember.FacebookUsername;
+			existTeammember.InstagramUsername = teammember.InstagramUsername;
+			existTeammember.LinkedInUsername = teammember.LinkedInUsername;
+			existTeammember.Position = teammember.Position;
+			existTeammember.PositionId = teammember.PositionId;
+
+			_context.SaveChanges();
+
+			return RedirectToAction("Index");
+
+        }
+
+
+		//Sweet-Delete option
 		public IActionResult Delete(int id)
         {
 			Teammember teammember = _context.Teammembers.FirstOrDefault(x=>x.Id==id);
 
 			if(teammember == null)
             {
+
+				//if there is no such teammember then it returns notfound page
+				//only used in sweet-delete and in other modals
 				return NotFound();
             }
 
-			_context.Teammembers.Remove();
+			FileManager.Delete(_env.WebRootPath, "uploads/teammembers", teammember.ImageUrl);
+
+			_context.Teammembers.Remove(teammember);
 			_context.SaveChanges();
 
-			
+			return Ok();
         }
 	}
 }

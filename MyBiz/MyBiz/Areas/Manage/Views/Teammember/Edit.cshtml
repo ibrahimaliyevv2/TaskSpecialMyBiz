@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <form asp-action="create" method="post" enctype="multipart/form-data">
+            <form asp-action="edit" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label asp-for="PositionId" class="form-label">PositionId</label>
                     <input asp-for="PositionId" style="color:white" type="text" class="form-control">
@@ -37,6 +37,7 @@
                 <div class="mb-3">
                     <input asp-for="ImageFile" />
                     <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    <img width="150px" src="~/uploads/teammembers/@Model.ImageUrl"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

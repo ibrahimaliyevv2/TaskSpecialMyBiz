@@ -6,11 +6,7 @@
   <MonoDevelop.Ide.ItemProperties.MyBiz PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyBiz/Areas/Manage/Controllers/TeammemberController.cs">
-    <Files>
-      <File FileName="MyBiz/Areas/Manage/Views/Teammember/Create.cshtml" Line="43" Column="46" />
-      <File FileName="MyBiz/Areas/Manage/Controllers/TeammemberController.cs" Line="51" Column="19" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -18,18 +14,30 @@
             <Node name="MyBiz" expanded="True">
               <Node name="Areas" expanded="True">
                 <Node name="Manage" expanded="True">
-                  <Node name="Controllers" expanded="True">
-                    <Node name="TeammemberController.cs" selected="True" />
-                  </Node>
+                  <Node name="Controllers" expanded="True" />
                   <Node name="Views" expanded="True">
                     <Node name="Position" expanded="True" />
+                    <Node name="Shared" expanded="True">
+                      <Node name="_Layout.cshtml" selected="True" />
+                    </Node>
                     <Node name="Teammember" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="DAL" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="wwwroot" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="manage" expanded="True">
+                  <Node name="assets" expanded="True">
+                    <Node name="css" expanded="True" />
+                    <Node name="js" expanded="True" />
+                    <Node name="scss" expanded="True">
+                      <Node name="bootstrap" expanded="True">
+                        <Node name="scss" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
